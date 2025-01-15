@@ -15,16 +15,19 @@ cy.avtorizacia()
 //4.საძიებო ველში ჩაწერე შემდეგი პროდუქტის დასახელება: SANICAT CLASSIC TR 10L EUR.
 cy.get('.popsrch').click().type('SANICAT CLASSIC TR 10L EUR')
 cy.get('.menu-pop .popsrch.active button').click()
+cy.get('h2 > a').should('have.text', 'SANICAT CLASSIC TR 10L EUR')
+cy.get('.product-cart').click()
 //დააჭირე ზედა მარჯვენა კუთხეში არსებულ კალათას ლოგოს.
+cy.get('.menu-pop > [href="https://testzootopia.loremipsum.ge/ka/cart"]').click()
 //გაიხსნა კალათის გევრდი, სადაც დაგხვდება არჩეული პროდუქტი
-//(პროდუქციის დასახელება: SANICAT CLASSIC TR 10L EUR
-//პროდუქციის ID: #PSANCLAT010L31
-//პროდუქციის ფასი: 21.90 ლარი)
+cy.get('span.productCode').should('have.text', '#PSANCLAT010L31')
 //6. დააჭირე პროდუქტის მარჯვენა ზედა მხარეს არსებულ პროდუქტის წაშლის
 //ღილაკს.
+cy.get('#Ellipse_42').should('be.visible').click()
 //პროდუაცია წარმატებით წაიშალა.
-//Postconditions:პროდუქტის წაშლის ღილაკი წარმატებით ფუნქციონირებს.
-//Expected Results:პროდუქტის წაშლის შემდეგ კალათა ცარიელია და გამოდის
+//პროდუქტის წაშლის შემდეგ კალათა ცარიელია და გამოდის
 //შესაბამისი შეტყობინება კალათის გვერდზე.
+cy.contains('p', 'კალათა ცარიელია').should('be.visible')
+
   })
 })

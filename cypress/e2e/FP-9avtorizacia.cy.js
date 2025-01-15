@@ -7,6 +7,7 @@ describe('FP-9avtorizacia', () => {
     //1. გახსენი საიტი.
     cy.visit("https://testzootopia.loremipsum.ge/ka")
 //გაიხსნა საიტის მთავარი გვერდი.
+cy.get('.b1 > h2').should('have.text','პროდუქტების ფართო არჩევანი')
 //2.დააჭირე მარჯვენა კუთხეში არსებულ ღილაკს “შესვლა”.
 cy.get('.menu-pop > .rprof').click()
 //გამოჩნდა ავტორიზაციის ფანჯარა.

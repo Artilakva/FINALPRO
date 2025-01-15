@@ -3,6 +3,7 @@ describe('Distermsregistration', () => {
 //1. გახსენი საიტი.
 //გაიხსნა საიტის მთავარი გვერდი.
 cy.visit("https://testzootopia.loremipsum.ge/ka")
+cy.get('.b1 > h2').should('have.text','პროდუქტების ფართო არჩევანი')
 //2.დააჭირე მარჯვენა კუთხეში არსებულ ღილაკს “შესვლა”.
 //გამოჩნდა ავტორიზაციის ფანჯარა.
 //3.დააჭირე ავტორიზაციის ფანჯარაზე არსებულ ნარინჯისფერ წარწერას “გაიარეთ
@@ -16,5 +17,8 @@ cy.visit("https://testzootopia.loremipsum.ge/ka")
 //პაროლი- Anushka123
 //გაიმეორეთ პაროლი-Anushka123
  cy.disterms()
+ //გაწითლდა წესებისა და პირობების ლოგო (თათები).
+ cy.get('#Path_10302')
+      .trigger('mouseover')
     })
 })
