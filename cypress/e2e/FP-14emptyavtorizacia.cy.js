@@ -12,8 +12,8 @@ cy.get('.b1 > h2').should('have.text','პროდუქტების ფა�
 cy.get('.menu-pop > .rprof').click()
 //3.შეყვანე ელ.ფოსტა და პაროლი, დააჭირე ავტორიზაციის ღილაკს.
 //Test Data:
-//ელ.ფოსტა-anaartilakva1@gmail.com
-//პაროლი- დატოვე ცარიელი
+//ელ.ფოსტა-დატოვე ცარიელი
+//პაროლი- Anushka123
 cy.get('.ipass').type(Userinfo.correctpassword)
 cy.get('.avtorization > .input-shablon > .form-button').click()
 //გამოჩნდა პოპაპი შესაბამისი შეტყობინებით.
